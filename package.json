@@ -9,13 +9,15 @@
   "scripts": {
     "format": "prettier --config .prettierrc --write \"**/*.{ts,js}\"",
     "format:file": "prettier --config .prettierrc --write",
-    "start": "ts-node request.ts"
+    "compute:season-one:week-one": "ts-node ./season/one/scripts/week-one.ts"
   },
   "dependencies": {
     "graphql": "16.3.0",
-    "graphql-request": "4.1.0"
+    "graphql-request": "4.1.0",
+    "json2csv": "5.0.7"
   },
   "devDependencies": {
+    "@types/json2csv": "5.0.3",
     "prettier": "2.6.0",
     "ts-node": "10.7.0",
     "typescript": "4.6.2"

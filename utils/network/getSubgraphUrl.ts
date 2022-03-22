@@ -6,7 +6,7 @@ import {
   AVALANCHE_TWAB_SUBGRAPH_URL,
 } from '../Constants';
 
-function getSubgraphUrlForNetwork(chainId: string): string {
+function getSubgraphUrl(chainId: string): string {
   switch (chainId) {
     case '1':
       return MAINNET_TWAB_SUBGRAPH_URL;
@@ -23,4 +23,4 @@ function getSubgraphUrlForNetwork(chainId: string): string {
   }
 }
 
-export default getSubgraphUrlForNetwork;
+export default getSubgraphUrl;
