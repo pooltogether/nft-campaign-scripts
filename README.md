@@ -8,7 +8,10 @@ This project uses [graphql-request](https://www.npmjs.com/package/graphql-reques
 
 ### Networks
 
-To retrieve the subgraph endpoint per network, use the `getSubgraphUrl` function in `utils/network/getSubgraphUrl.ts`.
+This project uses two subgraphs, the TWAB subgraph and the TWAB Delegator one.
+Use the following functions in `utils/network/getTWABSubgraphUrl.ts` to retrieve the subgraph url per network:
+- getTWABSubgraphUrl
+- getTWABDelegatorSubgraphUrl
 
 ### Queries
 
@@ -18,12 +21,12 @@ GraphQL queries are stored in the `utils/query` directory. Each query are stored
 
 Requests are stored in the `utils/request` directory. Each request are stored in a separate file.
 
-To create a request, first call the `getSubgraphUrl` function and pass the chain id for which you want to query the subgraph. Then, import the query you want to perform. For example:
+To create a request, first call the `getTWABSubgraphUrl` function and pass the chain id for which you want to query the subgraph. Then, import the query you want to perform. For example:
 ```
-  const subgraphURL = getSubgraphUrl(chainId);
-  const usersAccount = await getUsersAccount(subgraphURL, ticket.toLowerCase(), blockNumber);
+  const subgraphURL = getTWABSubgraphUrl(chainId);
+  const accounts = await getAccounts(subgraphURL, ticket.toLowerCase(), blockNumber);
 
-  return usersAccount.flat(1);
+  return accounts.flat(1);
 ```
 
 ### Commands
@@ -32,8 +35,8 @@ To compute results per season and per week:
 
 ```
 yarn compute:season-one:week-one
-````
-
+yarn compute:season-one:week-four
+```
 
 ### Scripts
 
@@ -42,8 +45,6 @@ Scripts are stored per NFT season and week in the `scripts` directory. For examp
 ## Results
 
 Results are exported as CSV per season and week. For example, results for week one of the first season are exported in `season/one/results/week-one.csv`.
-
-
 
 ## Code quality
 
@@ -55,5 +56,5 @@ yarn format
 Or per file:
 
 ```
-yarn format:file utils/network/getSubgraphUrl.ts
+yarn format:file utils/network/getTWABSubgraphUrl.ts
 ```

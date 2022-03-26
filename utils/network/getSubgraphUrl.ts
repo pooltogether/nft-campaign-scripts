@@ -4,9 +4,13 @@ import {
   RINKEBY_TWAB_SUBGRAPH_URL,
   MUMBAI_TWAB_SUBGRAPH_URL,
   AVALANCHE_TWAB_SUBGRAPH_URL,
+  MAINNET_TWAB_DELEGATOR_SUBGRAPH_URL,
+  POLYGON_TWAB_DELEGATOR_SUBGRAPH_URL,
+  RINKEBY_TWAB_DELEGATOR_SUBGRAPH_URL,
+  AVALANCHE_TWAB_DELEGATOR_SUBGRAPH_URL,
 } from '../Constants';
 
-function getSubgraphUrl(chainId: string): string {
+export function getTWABSubgraphUrl(chainId: string): string {
   switch (chainId) {
     case '1':
       return MAINNET_TWAB_SUBGRAPH_URL;
@@ -23,4 +27,17 @@ function getSubgraphUrl(chainId: string): string {
   }
 }
 
-export default getSubgraphUrl;
+export function getTWABDelegatorSubgraphUrl(chainId: string): string {
+  switch (chainId) {
+    case '1':
+      return MAINNET_TWAB_DELEGATOR_SUBGRAPH_URL;
+    case '137':
+      return POLYGON_TWAB_DELEGATOR_SUBGRAPH_URL;
+    case '4':
+      return RINKEBY_TWAB_DELEGATOR_SUBGRAPH_URL;
+    case '43114':
+      return AVALANCHE_TWAB_DELEGATOR_SUBGRAPH_URL;
+    default:
+      throw new Error(`Unsupported network: ${chainId}`);
+  }
+}
