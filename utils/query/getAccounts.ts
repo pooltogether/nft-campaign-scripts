@@ -39,8 +39,6 @@ export default async function getAccounts(
 
     const numberOfResults = data.ticket.accounts.length;
     if (numberOfResults < maxPageSize) {
-
-
       break;
     }
 

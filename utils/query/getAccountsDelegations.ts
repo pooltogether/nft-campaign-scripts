@@ -9,7 +9,7 @@ export default async function getAccountsDelegations(
 
   const maxPageSize = 1000;
 
-  let accounts;
+  const accounts = [];
   let lastAccountId = '';
 
   while (true) {
@@ -44,7 +44,7 @@ export default async function getAccountsDelegations(
     `;
 
     const data = await client.request(accountsQuery);
-    accounts = data.ticket.accounts;
+    accounts.push(data.ticket.accounts);
 
     const numberOfAccounts = data.ticket.accounts.length;
 
