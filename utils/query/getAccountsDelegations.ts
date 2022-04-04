@@ -16,7 +16,7 @@ export default async function getAccountsDelegations(
     const accountsQueryString = `{
       ticket(
         id: "${ticket}",
-        block: { number_gte: ${blockNumber} }
+        block: { number: ${blockNumber} }
       ) {
         accounts(
           first: ${maxPageSize},

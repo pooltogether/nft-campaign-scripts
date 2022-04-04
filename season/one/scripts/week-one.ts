@@ -9,7 +9,7 @@ const request = async () => {
   const accounts = await getAccounts(
     '137',
     POLYGON_USDC_TICKET_ADDRESS,
-    26198370 // Block number at Mar-21-2022 06:59:59 PM +UTC
+    26432570 // Block number at Mar-27-2022 07:00:01 PM +UTC
   );
 
   const accountsWithBalanceGTZero: Array<{ address: string }> = [];
@@ -20,7 +20,7 @@ const request = async () => {
     }
   });
 
-  const csv = parse(accountsWithBalanceGTZero, { fields: ['address'] });
+  const csv = parse(accountsWithBalanceGTZero, { header: false });
 
   fs.writeFile(path.join(__dirname, '..', 'results', 'week-one.csv'), csv, function (error) {
     if (error) {

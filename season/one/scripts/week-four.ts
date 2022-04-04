@@ -9,7 +9,7 @@ const request = async () => {
   const accounts = await getAccountsDelegations(
     '137',
     POLYGON_USDC_TICKET_ADDRESS,
-    10389090 // Block number at Mar-21-2022 06:59:59 PM +UTC
+    26432570 // Block number at Mar-27-2022 07:00:01 PM +UTC
   );
 
   const usersWithDelegationGT10: Array<{ address: string }> = [];
@@ -27,7 +27,7 @@ const request = async () => {
     });
   });
 
-  const csv = parse(usersWithDelegationGT10, { fields: ['address'] });
+  const csv = parse(usersWithDelegationGT10, { header: false });
 
   fs.writeFile(path.join(__dirname, '..', 'results', 'week-four.csv'), csv, function (error) {
     if (error) {
