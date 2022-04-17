@@ -9,7 +9,7 @@ const request = async () => {
   const accounts = await getAccountsDelegations(
     '137',
     POLYGON_USDC_TICKET_ADDRESS,
-    27054473 // Block number at Mar-27-2022 07:00:01 PM +UTC
+    27255398 // Block number at Apr-17-2022 07:00:01 PM +UTC
   );
 
   const usersWithDelegationGT10: Array<{ address: string }> = [];
