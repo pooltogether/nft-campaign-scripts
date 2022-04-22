@@ -26,6 +26,16 @@ export default async function getAccounts(
         ) {
           id
           balance
+          delegateBalance
+          twabs(
+            orderBy: timestamp,
+            orderDirection: asc
+          ) {
+            id
+            amount
+            delegateBalance
+            timestamp
+          }
         }
       }
     }`;
