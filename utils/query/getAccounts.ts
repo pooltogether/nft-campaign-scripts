@@ -1,6 +1,6 @@
 import { gql, GraphQLClient } from 'graphql-request';
 
-export default async function getUsersAccount(
+export default async function getAccounts(
   subgraphURL: string,
   ticket: string,
   blockNumber: number
@@ -16,7 +16,7 @@ export default async function getUsersAccount(
     const queryString = `{
       ticket(
         id: "${ticket}",
-        block: { number_gte: ${blockNumber} }
+        block: { number: ${blockNumber} }
       ) {
         accounts(
           first: ${maxPageSize},
@@ -39,7 +39,6 @@ export default async function getUsersAccount(
 
     const numberOfResults = data.ticket.accounts.length;
     if (numberOfResults < maxPageSize) {
-      // we have gotten all the results
       break;
     }
 
