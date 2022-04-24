@@ -12,7 +12,7 @@ const request = async (chainId: string, blockNumber: number) => {
   const accounts = await getAccounts(
     chainId,
     getTicketAddress(chainId),
-    blockNumber // Block number at Apr-24-2022 07:00:01 PM +UTC
+    blockNumber // Block number at Apr-24-2022 07:00:00 PM +UTC
   );
 
   const accountsWithDelegateBalanceGTZero: Array<string> = [];
@@ -44,10 +44,9 @@ const request = async (chainId: string, blockNumber: number) => {
 };
 
 const requests = async () => {
-  // TODO: replace block numbers
-  const addressesEthereum = await request('1', 14636810);
-  const addressesPolygon = await request('137', 27455035);
-  const addressesAvalanche = await request('43114', 13766185);
+  const addressesEthereum = await request('1', 14649170);
+  const addressesPolygon = await request('137', 27529570);
+  const addressesAvalanche = await request('43114', 13849316);
 
   const addresses = [...addressesEthereum, ...addressesPolygon, ...addressesAvalanche];
 
