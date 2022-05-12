@@ -22,3 +22,10 @@ export const MAINNET_USDC_TICKET_ADDRESS = '0xdd4d117723C257CEe402285D3aCF218E9A
 export const POLYGON_USDC_TICKET_ADDRESS = '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076';
 export const AVALANCHE_USDC_TICKET_ADDRESS = '0xB27f379C050f6eD0973A01667458af6eCeBc1d90';
 export const RINKEBY_USDC_TICKET_ADDRESS = '0x325E456e8Ac0bCB65a5515FA70B6b9D581809c36';
+
+export const GOVERNANCE_SUBGRAPH_URL =
+  'https://api.thegraph.com/subgraphs/name/pooltogether/pooltogether-governance';
+
+export const SNAPSHOT_GRAPH_URL = 'https://hub.snapshot.org/graphql';
+export const SNAPSHOT_POOLTOGETHER_ID = 'pooltogether.eth';
+export const SNAPSHOT_POOL_POOL_ID = 'poolpool.pooltogether.eth';
