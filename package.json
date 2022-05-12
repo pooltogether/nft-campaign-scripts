@@ -10,7 +10,8 @@
     "format": "prettier --config .prettierrc --write \"**/*.{ts,js}\"",
     "format:file": "prettier --config .prettierrc --write",
     "compute:season-one:week-one": "ts-node ./season/one/scripts/week-one.ts",
-    "compute:season-one:week-four": "ts-node ./season/one/scripts/week-four.ts"
+    "compute:season-one:week-four": "ts-node ./season/one/scripts/week-four.ts",
+    "compute:season-one:week-five": "ts-node ./season/one/scripts/week-five.ts"
   },
   "dependencies": {
     "graphql": "16.3.0",
